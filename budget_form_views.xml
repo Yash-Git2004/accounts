@@ -1,0 +1,108 @@
+<odoo>
+    <!-- Form View -->
+    <record model="ir.ui.view" id="hospital_data_form_view" >
+        <field name="name">hospital.data.form.view</field>
+        <field name="model">form.data</field>
+        <field name="arch" type="xml">
+            <form string="Hospital Form" style="display: block;justify_content:center">
+                <sheet style="margin: 0 200px; width:1500px; display:flex : height:1900px" >
+                    <group>
+                        <group>
+                            <field name="date"/>
+                            <field name="designation_category"/>
+
+                        </group>
+                        <group>
+                            <field name="employee"/>
+                            <field name="division_medical_reimbursement_for_suffering_from"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="hospital_name"/>
+                            <field name="treatment"/>
+                        </group>
+                        <group>
+                            <field name="doctor_name"/>
+                            <field name="amount_in_advance"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="expenditure_amount"/>
+                    </group>
+                      <!-- Medicine Table -->
+                <notebook style="display=flex">
+                    <page string="Details of Medicines:">
+                        <field name="medicine_ids" widget="one2many_list" style="text-align: center;">
+                            <tree editable="bottom">
+                                <field name="sequence"/>
+                                <field name="sr_no"/>
+                                <field name="medicine_name"/>
+                                <field name="dosage"/>
+                                <field name="quantity"/>
+                                <field name="price"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                    <group>
+                        <group string="Applied By:">
+                            <field name="applied_by"/>
+                            <field name="applied_date"/>
+                        </group>
+                        <group string="Approved By:">
+                            <field name="approved_by"/>
+                            <field name="approved_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Rejected By:">
+                            <field name="rejected_by"/>
+                            <field name="rejected_date"/>
+                        </group>
+                        <group string="Cancelled By:">
+                            <field name="cancelled_by"/>
+                            <field name="cancelled_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="On Hold By:">
+                            <field name="on_hold_by"/>
+                            <field name="on_hold_date"/>
+                        </group>
+                    </group>
+                </sheet>
+
+
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+   <record model="ir.ui.view" id="hospital_data_tree_view">
+    <field name="name">hospital.data.tree.view</field>
+    <field name="model">form.data</field>
+    <field name="arch" type="xml">
+        <tree string="Hospital Data Tree">
+            <field name="date"/>
+            <field name="designation_category"/> <!-- Updated this line -->
+            <field name="hospital_name"/>
+            <field name="treatment"/>
+            <field name="expenditure_amount"/>
+            <field name="employee"/>
+            <field name="division_medical_reimbursement_for_suffering_from"/>
+            <field name="doctor_name"/>
+            <field name="amount_in_advance"/>
+        </tree>
+    </field>
+</record>
+
+
+    <!-- Action -->
+    <record id="rest_form_action_id" model="ir.actions.act_window">
+        <field name="name">Our Data</field>
+        <field name="res_model">form.data</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="hospital_data_tree_view"/>
+    </record>
+</odoo>

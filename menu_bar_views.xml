@@ -1,0 +1,7 @@
+<odoo>
+    <!-- Main Menu Item -->
+    <menuitem id="account_main_menu" name="Accounting" sequence="1"/>
+
+    <!-- Sub Menu Item -->
+    <menuitem id="account_form_submenu" name="Account Details" parent="account_main_menu" action="rest_form_action_id" sequence="10"/>
+</odoo>
