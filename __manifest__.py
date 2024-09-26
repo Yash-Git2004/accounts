@@ -1,6 +1,6 @@
 {
     'name': 'accounting',
-    'version': '2.0',
+    'version': '1.0',
     # 'category': 'Human Resources/Employees',
     'sequence': 100,
     # 'summary': 'Centralize employee information',
