@@ -1,7 +1,9 @@
 <odoo>
     <!-- Main Menu Item -->
-    <menuitem id="account_main_menu" name="Accounting" sequence"1"/>
+    <menuitem id="account_main_menu" name="Accounting" sequence="1"/>
 
-    <!-- Sub Menu Item -->
-    <menuitem id="account_form_submenu" name="Account Details" parent="account_main_menu" action="rest_form_action_id" sequence="10"/>
+    <!-- Sub Menu Items -->
+    <menuitem id="account_details_submenu" name="Account Details" parent="account_main_menu" action="rest_form_action_id" sequence="10"/>
+    <menuitem id="budget_heads_submenu" name="Budget Heads" parent="account_main_menu" action="rest_form_action_id" sequence="30"/>
+    <menuitem id="form_submenu" name="Form" parent="account_main_menu" action="rest_form_action_id" sequence="40"/>  <!-- This is now linked to the form view -->
 </odoo>
